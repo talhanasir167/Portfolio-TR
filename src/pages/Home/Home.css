@@ -180,13 +180,20 @@
   font-weight: 500;
   color: #000000;
   background-color: transparent;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
 }
 
 .explore-button:hover {
+  transform: translateY(-2px);
   background-color: #000000;
   color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.explore-button:active {
+  transform: translateY(0px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .explore-dot {

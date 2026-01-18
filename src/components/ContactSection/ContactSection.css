@@ -53,11 +53,17 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   align-self: flex-start;
   margin-top: 1rem;
+  cursor: pointer;
 }
 
 .contact-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.contact-button:active {
+  transform: translateY(0px);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
 }
 
 @media (max-width: 768px) {
