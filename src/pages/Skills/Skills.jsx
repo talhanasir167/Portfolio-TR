@@ -87,6 +87,22 @@ const Skills = () => {
     }
   ]
 
+  const topSkills = [
+    { name: 'React', level: 95 },
+    { name: 'JavaScript', level: 90 },
+    { name: 'TypeScript', level: 88 },
+    { name: 'Node.js', level: 85 },
+    { name: 'Python', level: 82 },
+    { name: 'UI/UX Design', level: 80 }
+  ]
+
+  const achievements = [
+    { title: 'Expert Level', description: 'Proficient in modern web development frameworks and tools', count: '5+ Years' },
+    { title: 'Projects Delivered', description: 'Successfully completed projects across various domains', count: '50+' },
+    { title: 'Technologies', description: 'Comprehensive knowledge of multiple technology stacks', count: '30+' },
+    { title: 'Client Satisfaction', description: 'Maintaining high standards in every project', count: '100%' }
+  ]
+
   return (
     <div className="skills-page">
       <Header />
@@ -94,9 +110,27 @@ const Skills = () => {
       <section className="skills-hero">
         <div className="skills-hero-content">
           <h1 className="skills-hero-title">Skills that fuel my passion</h1>
-          <div className="skills-nav-icons">
-            {[...Array(8)].map((_, i) => (
-              <div key={i} className="nav-icon"></div>
+          <p className="skills-hero-subtitle">
+            A COMPREHENSIVE OVERVIEW OF MY TECHNICAL EXPERTISE AND PROFESSIONAL CAPABILITIES
+          </p>
+        </div>
+      </section>
+
+      <section className="skills-overview">
+        <div className="skills-overview-content">
+          <h2 className="section-title-white">Core Expertise</h2>
+          <p className="section-subtitle-white">YEARS OF DEDICATED PRACTICE ACROSS MULTIPLE TECHNOLOGY DOMAINS</p>
+          <div className="top-skills">
+            {topSkills.map((skill, index) => (
+              <div key={index} className="skill-level-item">
+                <div className="skill-level-header">
+                  <span className="skill-level-name">{skill.name}</span>
+                  <span className="skill-level-percent">{skill.level}%</span>
+                </div>
+                <div className="skill-level-bar">
+                  <div className="skill-level-fill" style={{ width: `${skill.level}%` }}></div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -104,9 +138,27 @@ const Skills = () => {
 
       <section className="skills-showcase">
         <div className="skills-showcase-content">
+          <h2 className="section-title-white">Technical Skills</h2>
+          <p className="section-subtitle-white">DETAILED BREAKDOWN OF MY SKILLSET ACROSS DIFFERENT DOMAINS</p>
           <div className="skills-grid">
             {skills.map(skill => (
               <SkillCard key={skill.id} skill={skill} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="skills-achievements">
+        <div className="skills-achievements-content">
+          <h2 className="section-title-white">Achievements & Experience</h2>
+          <p className="section-subtitle-white">HIGHLIGHTS OF MY PROFESSIONAL JOURNEY AND EXPERTISE</p>
+          <div className="achievements-grid">
+            {achievements.map((achievement, index) => (
+              <div key={index} className="achievement-card">
+                <div className="achievement-count">{achievement.count}</div>
+                <h3 className="achievement-title">{achievement.title}</h3>
+                <p className="achievement-description">{achievement.description}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -119,4 +171,5 @@ const Skills = () => {
 }
 
 export default Skills
+
 

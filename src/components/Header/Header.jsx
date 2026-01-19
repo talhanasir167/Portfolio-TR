@@ -10,7 +10,7 @@ const Header = () => {
         </Link>
         <div className="header-right">
           <p className="header-description">
-            Passionate Creative Designer and Developer, dedicated to crafting innovative solutions and exceptional digital experiences through modern technologies
+            Passionate Creative Designer and Developer
           </p>
           <nav className="header-nav">
             <Link to="/" className="nav-link">Home</Link>
@@ -24,4 +24,5 @@ const Header = () => {
 }
 
 export default Header
+
 

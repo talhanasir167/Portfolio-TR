@@ -4,9 +4,13 @@ const ProjectCard = ({ title, image, description }) => {
   return (
     <div className="project-card">
       <div className="project-image">
-        <div className="project-placeholder">
-          {image || title.charAt(0)}
-        </div>
+        {image ? (
+          <img src={image} alt={title} className="project-img" />
+        ) : (
+          <div className="project-placeholder">
+            {title.charAt(0)}
+          </div>
+        )}
       </div>
       <div className="project-info">
         <span className="project-title">{title}</span>
@@ -21,4 +25,5 @@ const ProjectCard = ({ title, image, description }) => {
 }
 
 export default ProjectCard
+
 

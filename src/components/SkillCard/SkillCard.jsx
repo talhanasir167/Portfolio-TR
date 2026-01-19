@@ -9,7 +9,7 @@ const SkillCard = ({ skill }) => {
       {skill.icons && (
         <div className="skill-icons">
           {skill.icons.map((icon, index) => (
-            <span key={index} className="skill-icon">{icon}</span>
+            <span key={index} className="skill-icon-text">{icon}</span>
           ))}
         </div>
       )}
@@ -26,4 +26,5 @@ const SkillCard = ({ skill }) => {
 }
 
 export default SkillCard
+
 

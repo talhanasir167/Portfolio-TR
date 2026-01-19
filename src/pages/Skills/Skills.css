@@ -34,8 +34,9 @@
   color: #999999;
 }
 
+/* Hero Section */
 .skills-hero {
-  padding: 6rem 4rem 4rem;
+  padding: 8rem 4rem 6rem;
   background-color: #000000;
 }
 
@@ -55,29 +56,107 @@
   color: #ffffff;
 }
 
-.skills-nav-icons {
-  display: flex;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  background-color: #1a1a1a;
+.skills-hero-subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: #888888;
+  text-transform: uppercase;
+  font-weight: 500;
+  max-width: 800px;
+}
+
+/* Overview Section */
+.skills-overview {
+  padding: 8rem 4rem;
+  background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+}
+
+.skills-overview-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-title-white {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.section-title-white::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 2px;
+}
+
+.section-subtitle-white {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: #888888;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.top-skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.skill-level-item {
+  padding: 2rem;
+  background: #1a1a1a;
   border-radius: 12px;
-  width: fit-content;
+  border: 1px solid #2a2a2a;
 }
 
-.nav-icon {
-  width: 8px;
+.skill-level-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.skill-level-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.skill-level-percent {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.skill-level-bar {
+  width: 100%;
   height: 8px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  opacity: 0.4;
+  background: #2a2a2a;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
-.nav-icon:first-child {
-  opacity: 1;
+.skill-level-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
 }
 
+/* Skills Showcase */
 .skills-showcase {
-  padding: 4rem 4rem 6rem;
+  padding: 8rem 4rem;
   background-color: #000000;
 }
 
@@ -90,11 +169,78 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
+  margin-top: 4rem;
 }
 
+/* Achievements Section */
+.skills-achievements {
+  padding: 8rem 4rem;
+  background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
+}
+
+.skills-achievements-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.achievement-card {
+  padding: 2.5rem;
+  background: #1a1a1a;
+  border-radius: 16px;
+  border: 1px solid #2a2a2a;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-8px);
+  border-color: #3b82f6;
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
+}
+
+.achievement-count {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.achievement-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.achievement-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
-  .skills-hero-title {
+  .skills-hero-title,
+  .section-title-white {
     font-size: 4rem;
+  }
+
+  .top-skills {
+    grid-template-columns: 1fr;
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .skills-grid {
@@ -104,19 +250,33 @@
 
 @media (max-width: 768px) {
   .skills-hero {
-    padding: 4rem 2rem 2rem;
+    padding: 6rem 2rem 4rem;
   }
 
-  .skills-hero-title {
+  .skills-hero-title,
+  .section-title-white {
     font-size: 2.5rem;
   }
 
-  .skills-showcase {
-    padding: 3rem 2rem 4rem;
+  .skills-hero-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .skills-overview,
+  .skills-showcase,
+  .skills-achievements {
+    padding: 6rem 2rem;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
   }
 
   .skills-grid {
     grid-template-columns: 1fr;
   }
-}
 
+  .achievement-count {
+    font-size: 2.5rem;
+  }
+}
